@@ -3,20 +3,10 @@ Template này được sử dụng cho video hướng dẫn React Native (basic)
 
 ### Môi trường chạy dự án: Node.js v20.14.0
 https://nodejs.org/download/release/v20.14.0/
+(đang chạy node v24.0.2 , chạy expo go version 53 , các thự viện đang cập5 nhập mới nhất để phù hợp với version của app 
+expo go trên ios ngày 9/8/2025 )
 
-## Về tác giả
-Mọi thông tin về Tác giả Hỏi Dân IT, các bạn có thể tìm kiếm tại đây:
-
-Website chính thức: https://hoidanit.vn/
-
-Youtube “Hỏi Dân IT” : https://www.youtube.com/@hoidanit
-
-Tiktok “Hỏi Dân IT” :  https://www.tiktok.com/@hoidanit
-
-Fanpage “Hỏi Dân IT” : https://www.facebook.com/askITwithERIC/
-
-Udemy Hỏi Dân IT: https://www.udemy.com/user/eric-7039/
-
+## Về tác giả: hoidanit 
 ===
 
 Các bước cài đặt: (chế độ development)
