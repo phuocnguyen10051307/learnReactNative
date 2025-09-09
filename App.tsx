@@ -1,22 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Alert, Button, StyleSheet, Text, View, Image } from 'react-native';
+import { Alert, Button, StyleSheet, Text, View, Image, TextInput } from 'react-native';
 
 export default function App() {
-  let [check, SetCheck] = useState<boolean>(false)
-  let [num, setNum] = useState<number>(0)
-  let a: string = "không muốn bị scam thì chuyển khoản cho tao";
-  const hanleOnclick = () => {
-    SetCheck(!check)
-    num < 10 ? setNum(num + 1) : setNum(0)
-  }
+  let [name, setName] = useState<string>("phuoc nguyen")
+  let [age, setAge] = useState<number>(0);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.hello1}>{`${num}`}</Text>
-      {/* <Text style={styles.bt1} onPress={hanleOnclick}>Click me 
-      </Text> */}
-      <Button title='Increase ' onPress={()=>setNum(num+1)}/>
-      <Button title='Descrease'onPress={()=>setNum(num-1)}/>
+      <Text style={styles.hello1}> Name: {`${name}`} </Text>
+      <TextInput
+        value={name}
+        onChangeText={(value) => { setName(value) }}
+        style={styles.bt1} />
+      <Text style={styles.hello1}>Age  : {`${age}`} </Text>
+      <TextInput
+        keyboardType='number-pad'
+        maxLength={2}
+        onChangeText={(value) => { setAge(+value) }}
+        style={styles.bt1} />
     </View>
   );
 }
@@ -34,16 +36,16 @@ const styles = StyleSheet.create({
   },
   hello1: {
     color: `greenlight`,
-    fontSize: 50,
-    height: 500,
+    fontSize: 20,
 
   },
   bt1: {
     width: 200,
-    textAlign: `center`,
     marginVertical: 8,
-    backgroundColor: `yellow`,
-    color: 'red',
+    borderBlockColor: "black",
+    borderWidth: 1,
     fontSize: 20,
+    borderRadius: 20,
+    textAlign: "center"
   }
 });
