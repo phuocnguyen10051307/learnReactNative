@@ -1,24 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Alert, Button, StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { Alert, Button, StyleSheet, Text, View, Image, TextInput, ScrollView } from 'react-native';
 
 export default function App() {
-  let [name, setName] = useState<string>("phuoc nguyen")
-  let [age, setAge] = useState<number>(0);
+  let [students, setStudents] = useState([
+    { id: 1, name: "Phuoc ", age: 21 },
+    { id: 2, name: "Tam ", age: 21 },
+    { id: 3, name: "Thy ", age: 21 },
+    { id: 4, name: "Thu ", age: 21 },
+    { id: 5, name: "Suong ", age: 21 },
+    { id: 6, name: "Thao ", age: 21 },
+    { id: 7, name: "Phuc ", age: 21 },
+    { id: 8, name: "Nam ", age: 21 },
+    { id: 9, name: "Han ", age: 21 },
+    { id: 10, name: "Phu ", age: 21 }])
 
   return (
     <View style={styles.container}>
-      <Text style={styles.hello1}> Name: {`${name}`} </Text>
-      <TextInput
-        value={name}
-        onChangeText={(value) => { setName(value) }}
-        style={styles.bt1} />
-      <Text style={styles.hello1}>Age  : {`${age}`} </Text>
-      <TextInput
-        keyboardType='number-pad'
-        maxLength={2}
-        onChangeText={(value) => { setAge(+value) }}
-        style={styles.bt1} />
+      <Text style={{ fontSize: 30 }}>Hello world</Text>
+      <ScrollView>
+              {students.map((stu) => {
+        return (
+
+          <View key={`${stu.id}`}>
+            <Text style={styles.bt1}>{`${stu.name}`}</Text>
+          </View>
+        )
+      })}</ScrollView>
+
     </View>
   );
 }
@@ -31,21 +40,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 20,
+    paddingHorizontal: 20,
   },
   hello1: {
-    color: `greenlight`,
-    fontSize: 20,
 
   },
   bt1: {
-    width: 200,
-    marginVertical: 8,
-    borderBlockColor: "black",
+    borderRadius: 0,
     borderWidth: 1,
-    fontSize: 20,
-    borderRadius: 20,
-    textAlign: "center"
+    height: 100,
+    marginBottom: 10,
+    textAlign: "center",
+    backgroundColor: "pink"
+
   }
 });
